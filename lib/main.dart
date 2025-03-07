@@ -40,7 +40,7 @@ class _NavigationExampleState extends State<NavigationExample> {
         destinations: const <Widget>[
           NavigationDestination(
             selectedIcon: Icon(Icons.people),
-            icon: Icon(Icons.people_alt_outlined),
+            icon: Badge(label: Text('2'), child: Icon(Icons.people_alt_outlined)),
             label: 'Socials',
           ),
           NavigationDestination(
@@ -48,45 +48,13 @@ class _NavigationExampleState extends State<NavigationExample> {
             label: 'home',
           ),
           NavigationDestination(
-            icon: Badge(label: Text('2'), child: Icon(Elusive.leaf)),
+            icon: Badge(child: Icon(Elusive.leaf)),
             label: 'More',
           ),
         ],
       ),
       body:
       <Widget>[
-        /// Home page
-        Card(
-          shadowColor: Colors.transparent,
-          margin: const EdgeInsets.all(8.0),
-          child: SizedBox.expand(
-            child: Center(child: Text('Home page', style: theme.textTheme.titleLarge)),
-          ),
-        ),
-
-        /// Notifications page
-        const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Column(
-            children: <Widget>[
-              Card(
-                child: ListTile(
-                  leading: Icon(Icons.notifications_sharp),
-                  title: Text('Notification 1'),
-                  subtitle: Text('This is a notification'),
-                ),
-              ),
-              Card(
-                child: ListTile(
-                  leading: Icon(Icons.notifications_sharp),
-                  title: Text('Notification 2'),
-                  subtitle: Text('This is a notification'),
-                ),
-              ),
-            ],
-          ),
-        ),
-
         /// Messages page
         ListView.builder(
           reverse: true,
@@ -130,6 +98,39 @@ class _NavigationExampleState extends State<NavigationExample> {
             );
           },
         ),
+        /// Home page
+        Card(
+          shadowColor: Colors.transparent,
+          margin: const EdgeInsets.all(8.0),
+          child: SizedBox.expand(
+            child: Center(child: Text('Home page', style: theme.textTheme.titleLarge)),
+          ),
+        ),
+
+        /// Notifications page
+        const Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Column(
+            children: <Widget>[
+              Card(
+                child: ListTile(
+                  leading: Icon(Icons.notifications_sharp),
+                  title: Text('Notification 1'),
+                  subtitle: Text('This is a notification'),
+                ),
+              ),
+              Card(
+                child: ListTile(
+                  leading: Icon(Icons.notifications_sharp),
+                  title: Text('Notification 2'),
+                  subtitle: Text('This is a notification'),
+                ),
+              ),
+            ],
+          ),
+        ),
+
+
       ][currentPageIndex],
     );
   }
