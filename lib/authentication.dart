@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-
+/**
 class AuthenticationHelper {
 final FirebaseAuth _auth = FirebaseAuth.instance;
 get user => _auth.currentUser;
@@ -44,3 +44,4 @@ if (user == null) {
   print('User is signed in!');
 }
 });
+    **/
