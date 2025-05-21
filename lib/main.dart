@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fluttericon/elusive_icons.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 
 /// Flutter code sample for [NavigationBar].
@@ -118,7 +116,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                 child: ListTile(
                   leading: Icon(Icons.notifications_sharp),
                   title: Text('Notification 1'),
-                  subtitle: Text('This is a notificatioxn'),
+                  subtitle: Text('This is a notification'),
                 ),
               ),
               Card(
