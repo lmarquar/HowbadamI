@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fluttericon/elusive_icons.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+
 
 /// Flutter code sample for [NavigationBar].
 
