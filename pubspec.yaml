@@ -42,6 +42,7 @@ dependencies:
   fluttertoast: ^8.2.12
   google_sign_in: ^6.3.0
 
+  google_fonts: any
 dev_dependencies:
   flutter_test:
     sdk: flutter
