@@ -39,6 +39,8 @@ dependencies:
   fluttericon: ^2.0.0
   firebase_auth: ^5.5.1
   firebase_core: ^3.13.0 # add this line
+  fluttertoast: ^8.2.12
+  google_sign_in: ^6.3.0
 
 dev_dependencies:
   flutter_test:
