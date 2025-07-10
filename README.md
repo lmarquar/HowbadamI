@@ -1,35 +1,7 @@
 ![project](https://github.com/user-attachments/assets/a4af2842-96fc-412b-ac8e-a413e12add19)
 
 Ziele und Zielbereich:
-	mehr Einsicht in unseren Schadstoffausstoß, wodurch mehr Achtsamkeit und niedrigerer Ausstoß durch Optimierungsvorschläge erreicht werden kann. Es soll global anwendbar sein für jeden den es interessiert, wahrscheinlich eher junge Leute .
-Datenquellen:
-	- Gps tracking
-	- Bankingaccount
-	- Rechnungen
-	- smartwatch
-	- ourworldindata
-	- https://calculator.carbonfootprint.com/
-Berechnung:
-	- Auto: Start-Ziel/Gps, Treibstoff, Mitfahrer
-	- Zug: Start-Ziel/Gps
-	- Flug: Start-Ziel, Flugzeugart, Passagieranzahl
-	- Nahrung: Essgewohnheiten (Menge und Weise)
-Aussehen:
-Datenbasis:
-Drittanbieter:
--  Snapchat und andere Social Media Integration
-- Calculator.carbonfootprint.com
-- Google health and apple health Informationen
-Algorithmen:
-- Healthtracking in co2 Ausstoß umwandeln
-Fragen:
-	- wie unterscheiden zwischen Öpvn und Auto fahren ?
-	- Stromzähler wie ablesen ?
-	- welche Leute würden mithelfen ?
-	- wie veröffentlichen ? Bei Playstore !
-	- Privatsphäre
-Finanzierung:
-	- möglicherweise Greeenpeace
+	mehr Einsicht in unseren Schadstoffausstoß, wodurch mehr Achtsamkeit und niedrigerer Ausstoß durch Optimierungsvorschläge erreicht werden kann. Es 	soll global anwendbar sein für jeden den es interessiert, wahrscheinlich eher junge Leute.
 
  Link zum Alpha-Doc:
  https://docs.google.com/document/d/1krxS_O9OY6L7dGzuSk4hyhofs2sJ9YqqWMtlPd_romU/edit?pli=1&tab=t.0
