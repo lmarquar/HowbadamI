@@ -1,3 +1,4 @@
+![project](https://github.com/user-attachments/assets/a4af2842-96fc-412b-ac8e-a413e12add19)
 
 Ziele und Zielbereich:
 	mehr Einsicht in unseren Schadstoffausstoß, wodurch mehr Achtsamkeit und niedrigerer Ausstoß durch Optimierungsvorschläge erreicht werden kann. Es soll global anwendbar sein für jeden den es interessiert, wahrscheinlich eher junge Leute .
