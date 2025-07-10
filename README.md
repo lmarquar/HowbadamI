@@ -1,3 +1,5 @@
+https://docs.google.com/document/d/1krxS_O9OY6L7dGzuSk4hyhofs2sJ9YqqWMtlPd_romU/edit?tab=t.0#heading=h.h5aw14pecleo
+
 Ziele und Zielbereich:
 	mehr Einsicht in unseren Schadstoffausstoß, wodurch mehr Achtsamkeit und niedrigerer Ausstoß durch Optimierungsvorschläge erreicht werden kann. Es soll global anwendbar sein für jeden den es interessiert, wahrscheinlich eher junge Leute .
 Datenquellen:
@@ -80,5 +82,3 @@ Creating an application to track your carbon footprint, especially for car rides
 Remember that developing such an application can be complex, and you might need to collaborate with experts in environmental science and data analysis. Additionally, accessing some data sources may require permissions or partnerships. Starting small with just car rides and gradually expanding to flights is a good approach to manage the complexity.
 
 Lastly, staying updated with environmental regulations and calculations is crucial, as they can change over time. Good luck with your project, and feel free to ask if you have more specific questions along the way!
-
-![photo_2025-07-10_12-37-03](https://github.com/user-attachments/assets/7e3df54f-66eb-471c-870d-6af43c2eff5a)
