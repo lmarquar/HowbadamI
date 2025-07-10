@@ -1,4 +1,3 @@
-https://docs.google.com/document/d/1krxS_O9OY6L7dGzuSk4hyhofs2sJ9YqqWMtlPd_romU/edit?tab=t.0#heading=h.h5aw14pecleo
 
 Ziele und Zielbereich:
 	mehr Einsicht in unseren Schadstoffausstoß, wodurch mehr Achtsamkeit und niedrigerer Ausstoß durch Optimierungsvorschläge erreicht werden kann. Es soll global anwendbar sein für jeden den es interessiert, wahrscheinlich eher junge Leute .
@@ -34,6 +33,9 @@ Finanzierung:
  Link zum Alpha-Doc:
  https://docs.google.com/document/d/1krxS_O9OY6L7dGzuSk4hyhofs2sJ9YqqWMtlPd_romU/edit?pli=1&tab=t.0
 
+
+
+CHATGPT:
 ---
 Creating an application to track your carbon footprint, especially for car rides and flights, is an ambitious project, but it's a great initiative to contribute to environmental awareness. Here's a basic outline of the steps you can take to get started:
 
