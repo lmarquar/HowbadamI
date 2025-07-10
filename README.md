@@ -81,3 +81,4 @@ Remember that developing such an application can be complex, and you might need 
 
 Lastly, staying updated with environmental regulations and calculations is crucial, as they can change over time. Good luck with your project, and feel free to ask if you have more specific questions along the way!
 
+![photo_2025-07-10_12-37-03](https://github.com/user-attachments/assets/7e3df54f-66eb-471c-870d-6af43c2eff5a)
