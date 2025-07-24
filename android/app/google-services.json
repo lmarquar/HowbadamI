@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "526341362187",
+    "project_id": "howbadami-25a13",
+    "storage_bucket": "howbadami-25a13.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:526341362187:android:cba6652c36646ca323ad0e",
+        "android_client_info": {
+          "package_name": "de.lemarq4.howbadami"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyhaSKLGW6j6FBCwlDqQ-2rHqzaFNcx1w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
