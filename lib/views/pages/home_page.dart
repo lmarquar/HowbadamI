@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:fluttericon/elusive_icons.dart';
 
-
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomePageState extends State<HomePage> {
   int currentPageIndex = 0;
 
   @override
@@ -28,7 +27,9 @@ class _HomeScreenState extends State<HomeScreen> {
           NavigationDestination(
             selectedIcon: Icon(Icons.people),
             icon: Badge(
-                label: Text('2'), child: Icon(Icons.people_alt_outlined)),
+              label: Text('2'),
+              child: Icon(Icons.people_alt_outlined),
+            ),
             label: 'Socials',
           ),
           NavigationDestination(
@@ -41,9 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body:
-      <Widget>[
-
+      body: <Widget>[
         /// Messages page
         ListView.builder(
           reverse: true,
@@ -94,7 +93,8 @@ class _HomeScreenState extends State<HomeScreen> {
           margin: const EdgeInsets.all(8.0),
           child: SizedBox.expand(
             child: Center(
-                child: Text('Home page', style: theme.textTheme.titleLarge)),
+              child: Text('Home page', style: theme.textTheme.titleLarge),
+            ),
           ),
         ),
 
@@ -120,8 +120,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
         ),
-
-
       ][currentPageIndex],
     );
   }
