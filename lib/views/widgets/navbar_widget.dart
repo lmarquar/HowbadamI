@@ -15,7 +15,7 @@ class NavbarWidget extends StatelessWidget {
             NavigationDestination(icon: Icon(Icons.home), label: 'home'),
             NavigationDestination(
               icon: Icon(Icons.people_alt_outlined),
-              label: 'Profile',
+              label: 'Socials',
             ),
             NavigationDestination(icon: Icon(Elusive.leaf), label: 'Search'),
           ],
