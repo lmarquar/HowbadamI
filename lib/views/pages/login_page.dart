@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:howbadami/views/widget_tree.dart';
+import 'package:lottie/lottie.dart';
 
 TextEditingController controllerPw = TextEditingController();
 TextEditingController controllerEm = TextEditingController();
@@ -37,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                //  Lottie.asset('assets/lotties/Sustainable.json', height: 200),
+                Lottie.asset('assets/lotties/Sustainable.json', height: 200),
                 TextField(
                   controller: controllerEm,
                   decoration: InputDecoration(

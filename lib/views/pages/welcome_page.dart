@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:howbadami/views/pages/login_page.dart';
 import 'package:howbadami/views/pages/onboarding_page.dart';
+import 'package:lottie/lottie.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -15,7 +16,7 @@ class WelcomePage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                //Lottie.asset('assets/lotties/Grafico.json'),
+                Lottie.asset('assets/lotties/Grafico.json'),
                 FittedBox(
                   child: Text(
                     'Welcome to Leons Sandbox!',

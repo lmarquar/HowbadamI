@@ -8,11 +8,6 @@ void main() {
   runApp(const MyApp());
 }
 
-//Material App (stateful)
-//Scaffold
-//App title
-//Bottom navigation bar setState
-
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
