@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:howbadami/data/constants.dart';
+import 'package:howbadami/core/constants/constants.dart';
 import 'package:howbadami/views/pages/login_page.dart';
 import 'package:lottie/lottie.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:howbadami/data/constants.dart';
+import 'package:howbadami/core/constants/constants.dart';
 
 class ContainerWidget extends StatelessWidget {
   const ContainerWidget({

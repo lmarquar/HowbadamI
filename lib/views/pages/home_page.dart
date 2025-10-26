@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:howbadami/data/constants.dart';
+import 'package:howbadami/core/constants/constants.dart';
 import 'package:howbadami/views/widgets/container_widget.dart';
 import 'package:howbadami/views/widgets/hero_widget.dart';
 

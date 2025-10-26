@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:howbadami/data/constants.dart';
-import 'package:howbadami/data/notifiers.dart';
+import 'package:howbadami/core/constants/constants.dart';
+import 'package:howbadami/core/notifiers/notifiers.dart';
 import 'package:howbadami/views/pages/welcome_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
