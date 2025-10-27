@@ -1,12 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:howbadami/auth_service.dart';
-import 'package:howbadami/constants/constants.dart';
-import 'package:howbadami/constants/words.dart';
-import 'package:howbadami/notifiers/notifiers.dart';
-import 'package:howbadami/scaffolds/app_bottom_bar_buttons.dart';
-import 'package:howbadami/views/pages/login_page.dart';
-import 'package:howbadami/views/widgets/button_widget.dart';
+import 'package:howbadami/core/firebase/auth_service.dart';
+import 'package:howbadami/core/constants/words.dart';
+import 'package:howbadami/core/notifiers/notifiers.dart';
+import 'package:howbadami/app/scaffolds/app_bottom_bar_buttons.dart';
+import 'package:howbadami/app/mobile/pages/main/login_page.dart';
+import 'package:howbadami/app/widgets/button_widget.dart';
+import 'package:howbadami/core/theme/app_text_styles.dart';
 import 'package:lottie/lottie.dart';
 
 TextEditingController controllerPw = TextEditingController();
@@ -63,9 +63,12 @@ class _OnboardingPageState extends State<OnboardingPage> {
               children: [
                 Lottie.asset('assets/lotties/Ancient Man.json', height: 200),
                 SizedBox(height: 50),
-                const Text(Words.register, style: KTextStyle.descriptionText),
+                const Text(
+                  Words.register,
+                  style: AppTextStyles.descriptionText,
+                ),
                 const SizedBox(height: 20.0),
-                const Text('🔑', style: KTextStyle.icons),
+                const Text('🔑', style: AppTextStyles.icons),
                 const SizedBox(height: 50),
                 Form(
                   key: _formKey,
@@ -103,6 +106,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                             return null;
                           },
                         ),
+                        const SizedBox(height: 10),
+                        Text(errorMessage, style: TextStyle(color: Colors.red)),
                         const SizedBox(height: 10),
                       ],
                     ),

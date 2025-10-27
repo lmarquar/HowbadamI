@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:howbadami/constants/app_dimensions.dart';
+import 'package:howbadami/core/constants/app_dimensions.dart';
 
 class AppBottomBarButtons extends StatelessWidget {
   const AppBottomBarButtons({

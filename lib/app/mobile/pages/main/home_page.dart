@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:howbadami/constants/constants.dart';
-import 'package:howbadami/views/widgets/container_widget.dart';
-import 'package:howbadami/views/widgets/hero_widget.dart';
+import 'package:howbadami/core/constants/constants.dart';
+import 'package:howbadami/app/widgets/container_widget.dart';
+import 'package:howbadami/app/widgets/hero_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

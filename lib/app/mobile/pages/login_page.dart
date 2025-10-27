@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:howbadami/views/widget_tree.dart';
+import 'package:howbadami/app/mobile/pages/main/widget_tree.dart';
 import 'package:lottie/lottie.dart';
 
 TextEditingController controllerPw = TextEditingController();

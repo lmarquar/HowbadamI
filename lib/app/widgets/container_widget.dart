@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:howbadami/constants/constants.dart';
+import 'package:howbadami/core/theme/app_text_styles.dart';
 
 class ContainerWidget extends StatelessWidget {
   const ContainerWidget({
@@ -22,8 +22,8 @@ class ContainerWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(title, style: KTextStyle.titleTealText),
-              Text(description, style: KTextStyle.descriptionText),
+              Text(title, style: AppTextStyles.titleTealText),
+              Text(description, style: AppTextStyles.descriptionText),
             ],
           ),
         ),

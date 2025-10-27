@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:howbadami/notifiers/notifiers.dart';
-import 'package:howbadami/views/pages/home_page.dart';
-import 'package:howbadami/views/pages/more_page.dart';
-import 'package:howbadami/views/pages/settings_page.dart';
-import 'package:howbadami/views/pages/socials_page.dart';
-import 'package:howbadami/views/widgets/navbar_widget.dart';
+import 'package:howbadami/core/notifiers/notifiers.dart';
+import 'package:howbadami/app/mobile/pages/main/home_page.dart';
+import 'package:howbadami/app/mobile/pages/main/more_page.dart';
+import 'package:howbadami/app/mobile/pages/main/settings_page.dart';
+import 'package:howbadami/app/mobile/pages/main/socials_page.dart';
+import 'package:howbadami/app/widgets/navbar_widget.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 List<Widget> pages = [HomePage(), SocialsPage(), MorePage()];

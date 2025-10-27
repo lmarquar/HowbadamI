@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:howbadami/views/pages/expanded_flexible_page.dart';
+import 'package:howbadami/app/mobile/pages/main/expanded_flexible_page.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key, required this.title});
