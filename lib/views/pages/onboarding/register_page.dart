@@ -1,9 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:howbadami/app/mobile/pages/main/onboarding/onboarding_pages.dart';
 import 'package:howbadami/app/mobile/pages/main/onboarding/widgets/bottom_stepper_widget.dart';
 import 'package:howbadami/app/mobile/scaffolds/app_bottom_bar_buttons.dart';
 import 'package:howbadami/app/mobile/widgets/button_widget.dart';
+import 'package:howbadami/auth_service.dart';
 import 'package:howbadami/core/theme/app_text_styles.dart';
+import 'package:howbadami/views/pages/welcome_page.dart';
 import '../../../../../../core/constants/words.dart';
 import '../../../../../../core/notifiers/notifiers.dart';
 import '../../../../../../core/routes/page_route_return.dart';
@@ -18,7 +20,7 @@ class _RegisterPageState extends State<RegisterPage> {
   TextEditingController controllerEmail = TextEditingController();
   TextEditingController controllerPassword = TextEditingController();
   final formKey = GlobalKey<FormState>();
-  String errorMessage = '';
+  String errorMessage = 'Error message';
 
   @override
   void dispose() {
@@ -27,9 +29,27 @@ class _RegisterPageState extends State<RegisterPage> {
     super.dispose();
   }
 
-  void register() {
-    AppData.isAuthConnected.value = true;
-    popPage();
+  void register() async {
+    try {
+      await authService.value.createAccount(
+        email: controllerEmail.text,
+        password: controllerPassword.text,
+      );
+      AppData.isAuthConnected.value = true;
+      popPage();
+    } on FirebaseAuthException catch (e) {
+      // e.code contains the Firebase error code (e.g. 'invalid-email', 'weak-password')
+      setState(() {
+        errorMessage = '${e.code}: ${e.message ?? 'Unknown error'}';
+      });
+    } catch (e, st) {
+      // Fallback for any other exception
+      setState(() {
+        errorMessage = 'Unexpected error: $e';
+      });
+      // Optional: print stack trace to help debugging
+      debugPrintStack(label: 'register error', stackTrace: st);
+    }
   }
 
   void popPage() {
@@ -47,9 +67,7 @@ class _RegisterPageState extends State<RegisterPage> {
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  pageRouteReturn(
-                    previousPage: OnboardingPages(initialPage: currentIndex),
-                  ),
+                  pageRouteReturn(previousPage: WelcomePage()),
                 );
               },
               icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
