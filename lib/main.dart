@@ -1,16 +1,20 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:howbadami/core/constants/constants.dart';
-import 'package:howbadami/core/notifiers/notifiers.dart';
-import 'package:howbadami/views/pages/welcome_page.dart';
+import 'package:flutter/services.dart';
+import 'package:howbadami/constants/constants.dart';
+import 'package:howbadami/notifiers/notifiers.dart';
+import 'package:howbadami/firebase_options.dart';
+import 'package:howbadami/views/pages/onboarding/welcome_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // SystemChrome.setPreferredOrientations(const [DeviceOrientation.portraitUp]);
-  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  // await FirebaseAuth.instance.setSettings(
-  //   appVerificationDisabledForTesting: true,
-  // );
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(const [DeviceOrientation.portraitUp]);
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await FirebaseAuth.instance.setSettings(
+    appVerificationDisabledForTesting: true,
+  );
 
   runApp(const MyApp());
 }
