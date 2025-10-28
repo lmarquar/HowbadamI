@@ -1,51 +1,42 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:howbadami/app/mobile/scaffolds/app_bottom_bar_buttons.dart';
-import 'package:howbadami/app/mobile/widgets/button_widget.dart';
 import 'package:howbadami/core/constants/words.dart';
 import 'package:howbadami/core/theme/app_text_styles.dart';
 
-class UpdateUsernamePage extends StatefulWidget {
-  const UpdateUsernamePage({super.key});
+import '../../../widgets/button_widget.dart';
+
+class ResetPasswordPage extends StatefulWidget {
+  const ResetPasswordPage({super.key, required this.email});
+
+  final String email;
 
   @override
-  State<UpdateUsernamePage> createState() => _UpdateUsernamePageState();
+  State<ResetPasswordPage> createState() => _ResetPasswordPageState();
 }
 
-class _UpdateUsernamePageState extends State<UpdateUsernamePage> {
-  TextEditingController controllerUsername = TextEditingController();
-
+class _ResetPasswordPageState extends State<ResetPasswordPage> {
+  TextEditingController controllerEmail = TextEditingController();
   final formKey = GlobalKey<FormState>();
   String errorMessage = '';
 
   @override
+  void initState() {
+    super.initState();
+    controllerEmail.text = widget.email;
+  }
+
+  @override
   void dispose() {
-    controllerUsername.dispose();
+    controllerEmail.dispose();
     super.dispose();
   }
 
-  void showSnackBarSuccess() {
-    ScaffoldMessenger.of(context).clearSnackBars();
+  void showSnackBar() {
+    ScaffoldMessenger.of(context).clearMaterialBanners();
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
-        behavior: SnackBarBehavior.floating,
-        content: Text(
-          Words.usernameChangedSuccessfully,
-          style: AppTextStyles.m,
-        ),
-        showCloseIcon: true,
-      ),
-    );
-  }
-
-  void showSnackBarFailure() {
-    ScaffoldMessenger.of(context).clearSnackBars();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        backgroundColor: Theme.of(context).colorScheme.error,
-        behavior: SnackBarBehavior.floating,
-        content: Text(Words.usernameChangeFailed, style: AppTextStyles.m),
+        content: Text(Words.pleaseCheckYourEmail, style: AppTextStyles.m),
         showCloseIcon: true,
       ),
     );
@@ -68,9 +59,9 @@ class _UpdateUsernamePageState extends State<UpdateUsernamePage> {
           child: Column(
             children: [
               const SizedBox(height: 60.0),
-              const Text(Words.updateUsername, style: AppTextStyles.xxlBold),
+              const Text(Words.resetPassword, style: AppTextStyles.xxlBold),
               const SizedBox(height: 20.0),
-              const Text('✏️', style: AppTextStyles.icons),
+              const Text('🔐', style: AppTextStyles.icons),
               const SizedBox(height: 50),
               Form(
                 key: formKey,
@@ -78,9 +69,9 @@ class _UpdateUsernamePageState extends State<UpdateUsernamePage> {
                   child: Column(
                     children: [
                       TextFormField(
-                        controller: controllerUsername,
+                        controller: controllerEmail,
                         decoration: const InputDecoration(
-                          labelText: Words.newUsername,
+                          labelText: Words.email,
                         ),
                         validator: (String? value) {
                           if (value == null) {
@@ -111,14 +102,10 @@ class _UpdateUsernamePageState extends State<UpdateUsernamePage> {
       buttons: [
         ButtonWidget(
           isFilled: true,
-          label: Words.updateUsername,
+          label: Words.resetPassword,
           callback: () async {
             if (formKey.currentState!.validate()) {
-              if (Random().nextBool()) {
-                showSnackBarFailure();
-              } else {
-                showSnackBarSuccess();
-              }
+              showSnackBar();
             }
           },
         ),

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:howbadami/app/mobile/pages/others/change_password_page.dart';
 import 'package:howbadami/app/mobile/pages/others/delete_account_page.dart';
@@ -6,11 +7,11 @@ import 'package:howbadami/core/constants/app_dimensions.dart';
 import 'package:howbadami/core/constants/words.dart';
 import 'package:howbadami/core/theme/app_text_styles.dart';
 
-import '../../../../../../core/notifiers/notifiers.dart';
-import '../../../../scaffolds/app_padding_scaffold.dart';
-import '../../../../widgets/list_tile_widget.dart';
-import '../../../../widgets/neon_padding_widget.dart';
-import '../../../../widgets/unaffected_child_widget.dart';
+import '../../../../core/notifiers/notifiers.dart';
+import '../scaffolds/app_padding_scaffold.dart';
+import 'list_tile_widget.dart';
+import 'neon_padding_widget.dart';
+import 'unaffected_child_widget.dart';
 
 class ProfileWidget extends StatelessWidget {
   const ProfileWidget({super.key});
@@ -21,11 +22,15 @@ class ProfileWidget extends StatelessWidget {
       Navigator.pop(context);
     }
 
-    void logout() {
-      AppData.isAuthConnected.value = false;
-      AppData.navBarCurrentIndexNotifier.value = 0;
-      AppData.onboardingCurrentIndexNotifier.value = 0;
-      popPage();
+    void logout() async {
+      try {
+        AppData.isAuthConnected.value = false;
+        AppData.navBarCurrentIndexNotifier.value = 0;
+        AppData.onboardingCurrentIndexNotifier.value = 0;
+        popPage();
+      } on FirebaseAuthException catch (e) {
+        print(e.message);
+      }
     }
 
     return AppPaddingScaffold(

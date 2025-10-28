@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:howbadami/app/mobile/pages/main/login_page.dart';
+import 'package:howbadami/app/mobile/pages/main/onboarding/login_page.dart';
 import 'package:howbadami/app/mobile/pages/main/onboarding/onboarding_page.dart';
 import 'package:lottie/lottie.dart';
 
@@ -34,7 +34,7 @@ class WelcomePage extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return LoginPage(title: 'Login');
+                          return LoginPage();
                         },
                       ),
                     );

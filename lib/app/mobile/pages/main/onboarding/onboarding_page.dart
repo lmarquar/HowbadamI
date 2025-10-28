@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:howbadami/core/firebase/auth_service.dart';
 import 'package:howbadami/core/constants/words.dart';
 import 'package:howbadami/core/notifiers/notifiers.dart';
-import 'package:howbadami/app/scaffolds/app_bottom_bar_buttons.dart';
-import 'package:howbadami/app/mobile/pages/main/login_page.dart';
-import 'package:howbadami/app/widgets/button_widget.dart';
+import 'package:howbadami/app/mobile/scaffolds/app_bottom_bar_buttons.dart';
+import 'package:howbadami/app/mobile/pages/main/onboarding/login_page.dart';
+import 'package:howbadami/app/mobile/widgets/button_widget.dart';
 import 'package:howbadami/core/theme/app_text_styles.dart';
 import 'package:lottie/lottie.dart';
 
@@ -119,7 +119,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return LoginPage(title: Words.register);
+                          return LoginPage();
                         },
                       ),
                     );
