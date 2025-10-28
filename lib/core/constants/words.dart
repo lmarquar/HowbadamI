@@ -2,7 +2,7 @@ class Words {
   //acbde
   static const String aboutThisApp = 'About this app';
   static const String
-      areYouSureYouWantToDeleteYourAccountThisActionIsIrreversible =
+  areYouSureYouWantToDeleteYourAccountThisActionIsIrreversible =
       'Are you sure you want to delete your account? This action is irreversible';
   static const String areYouSureYouWantToLogout =
       'Are you sure you want to log out?';
@@ -17,6 +17,7 @@ class Words {
   static const String email = 'Email';
   static const String enterSomething = 'Enter something';
   static const String enterYourEmail = 'Enter your email';
+  static const String error = 'Error';
   static const String exercise = 'Exercise';
   static const String explore = 'Explore';
 
