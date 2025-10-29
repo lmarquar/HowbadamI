@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:howbadami/app/mobile/pages/main/home/expanded_flexible_page.dart';
+import 'package:howbadami/app/mobile/pages/main/profile/profile_page.dart';
+import 'package:howbadami/core/constants/words.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key, required this.title});
@@ -25,6 +27,20 @@ class _SettingsPageState extends State<SettingsPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return ProfilePage();
+                      },
+                    ),
+                  );
+                },
+                child: Text(Words.myProfile),
+              ),
+              Divider(color: Colors.teal, thickness: 5, endIndent: 200),
               ElevatedButton(
                 onPressed: () {
                   ScaffoldMessenger.of(

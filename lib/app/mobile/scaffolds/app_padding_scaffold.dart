@@ -59,6 +59,6 @@ class AppPaddingScaffold extends StatelessWidget {
     } else {
       widget = const SizedBox();
     }
-    return widget;
+    return Material(type: MaterialType.transparency, child: widget);
   }
 }

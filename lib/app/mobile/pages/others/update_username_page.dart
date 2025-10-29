@@ -1,8 +1,8 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:howbadami/app/mobile/scaffolds/app_bottom_bar_buttons.dart';
 import 'package:howbadami/app/mobile/widgets/button_widget.dart';
 import 'package:howbadami/core/constants/words.dart';
+import 'package:howbadami/core/firebase/auth_service.dart';
 import 'package:howbadami/core/theme/app_text_styles.dart';
 
 class UpdateUsernamePage extends StatefulWidget {
@@ -22,6 +22,15 @@ class _UpdateUsernamePageState extends State<UpdateUsernamePage> {
   void dispose() {
     controllerUsername.dispose();
     super.dispose();
+  }
+
+  void updateUsername() async {
+    try {
+      await authService.value.updateUsername(username: controllerUsername.text);
+      showSnackBarSuccess();
+    } catch (e) {
+      showSnackBarFailure();
+    }
   }
 
   void showSnackBarSuccess() {
@@ -114,11 +123,7 @@ class _UpdateUsernamePageState extends State<UpdateUsernamePage> {
           label: Words.updateUsername,
           callback: () async {
             if (formKey.currentState!.validate()) {
-              if (Random().nextBool()) {
-                showSnackBarFailure();
-              } else {
-                showSnackBarSuccess();
-              }
+              updateUsername();
             }
           },
         ),

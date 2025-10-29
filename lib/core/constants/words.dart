@@ -12,6 +12,7 @@ class Words {
   static const String continueNext = 'Continue';
   static const String currentPassword = 'Current password';
   static const String dailyHabit = 'Daily habit';
+  static const String deleted = 'Deleted';
   static const String deleteMyAccount = 'Delete my account';
   static const String deletePermanently = 'Delete Permanently';
   static const String email = 'Email';

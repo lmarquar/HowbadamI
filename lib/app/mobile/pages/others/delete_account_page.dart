@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:howbadami/app/mobile/scaffolds/app_bottom_bar_buttons.dart';
 import 'package:howbadami/app/mobile/widgets/button_widget.dart';
+import 'package:howbadami/core/firebase/auth_service.dart';
 import 'package:howbadami/core/theme/app_text_styles.dart';
 
 import '../../../../core/constants/words.dart';
@@ -19,15 +20,35 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
   TextEditingController controllerPassword = TextEditingController();
   String errorMessage = '';
 
-  void deleteAccount() {
-    AppData.isAuthConnected.value = false;
-    AppData.navBarCurrentIndexNotifier.value = 0;
-    AppData.onboardingCurrentIndexNotifier.value = 0;
-    popPage();
+  void popUntilLast() {
+    Navigator.of(context).popUntil((route) => route.isFirst);
   }
 
-  void popPage() {
-    Navigator.pop(context);
+  void deleteAccount() async {
+    try {
+      await authService.value.deleteAccount(
+        email: controllerEmail.text,
+        password: controllerPassword.text,
+      );
+      AppData.isAuthConnected.value = false;
+      AppData.navBarCurrentIndexNotifier.value = 0;
+      AppData.onboardingCurrentIndexNotifier.value = 0;
+      showSnackBar();
+      popUntilLast();
+    } catch (error) {
+      print(error.toString());
+    }
+  }
+
+  void showSnackBar() {
+    ScaffoldMessenger.of(context).clearMaterialBanners();
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        content: Text(Words.deleted, style: AppTextStyles.m),
+        showCloseIcon: true,
+      ),
+    );
   }
 
   @override
@@ -124,14 +145,14 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
                     actions: [
                       TextButton(
                         onPressed: () async {
-                          popPage();
+                          popUntilLast();
                           deleteAccount();
                         },
                         child: const Text(Words.deletePermanently),
                       ),
                       TextButton(
                         onPressed: () {
-                          popPage();
+                          popUntilLast();
                         },
                         child: const Text(Words.cancel),
                       ),

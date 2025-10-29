@@ -2,10 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:howbadami/app/mobile/layout/init_app_layout.dart';
 import 'package:howbadami/core/constants/constants.dart';
 import 'package:howbadami/core/notifiers/notifiers.dart';
 import 'package:howbadami/core/firebase/firebase_options.dart';
-import 'package:howbadami/app/mobile/pages/main/onboarding/welcome_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
@@ -51,7 +51,7 @@ class _MyAppState extends State<MyApp> {
               brightness: isDarkMode ? Brightness.dark : Brightness.light,
             ),
           ),
-          home: WelcomePage(),
+          home: const InitAppLayout(),
         );
       },
     );

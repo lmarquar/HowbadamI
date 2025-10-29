@@ -4,8 +4,8 @@ import 'package:howbadami/core/firebase/auth_service.dart';
 import 'package:howbadami/app/mobile/pages/main/onboarding/welcome_page.dart';
 import 'package:howbadami/app/mobile/pages/main/home/widget_tree.dart';
 
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key, this.pageIfNotConnected});
+class AuthLayout extends StatelessWidget {
+  const AuthLayout({super.key, this.pageIfNotConnected});
 
   final Widget? pageIfNotConnected;
 
