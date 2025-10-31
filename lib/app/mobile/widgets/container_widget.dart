@@ -18,7 +18,7 @@ class ContainerWidget extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 2),
       child: Card(
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(15.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

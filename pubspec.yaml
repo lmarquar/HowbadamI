@@ -46,6 +46,7 @@ dependencies:
   dartz: ^0.10.1
   intl: ^0.20.2
   provider: ^6.1.5+1
+  syncfusion_flutter_gauges: ^31.2.4
 
 dev_dependencies:
   flutter_test:

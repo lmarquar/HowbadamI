@@ -9,6 +9,7 @@ class Words {
   static const String cancel = "Cancel";
   static const String close = "Close";
   static const String changePassword = 'Change password';
+  static const String consumption = 'Consumption';
   static const String continueNext = 'Continue';
   static const String currentPassword = 'Current password';
   static const String dailyHabit = 'Daily habit';
@@ -16,6 +17,7 @@ class Words {
   static const String deleteMyAccount = 'Delete my account';
   static const String deletePermanently = 'Delete Permanently';
   static const String email = 'Email';
+  static const String energy = 'Energy';
   static const String enterSomething = 'Enter something';
   static const String enterYourEmail = 'Enter your email';
   static const String error = 'Error';
@@ -45,6 +47,7 @@ class Words {
       'Password changed successfully';
   static const String passwordChangeFailed = 'Password change failed';
   static const String pleaseCheckYourEmail = 'Please check your email';
+  static const String products = 'Products';
   static const String register = 'Register';
   static const String resetPassword = 'Reset password';
   static const String signIn = 'Sign in';
@@ -53,6 +56,7 @@ class Words {
   static const String settings = 'Settings';
 
   //uvwxyz
+  static const String travel = 'Travel';
   static const String updateUsername = 'Update username';
   static const String usernameChangedSuccessfully =
       'Username changed successfully';
