@@ -5,6 +5,7 @@ import 'package:howbadami/app/mobile/pages/others/update_username_page.dart';
 import 'package:howbadami/core/constants/app_dimensions.dart';
 import 'package:howbadami/core/constants/words.dart';
 import 'package:howbadami/core/firebase/auth_service.dart';
+import 'package:howbadami/core/functions/utils.dart';
 import 'package:howbadami/core/theme/app_text_styles.dart';
 import '../../../../../../core/notifiers/notifiers.dart';
 import '../../../../scaffolds/app_padding_scaffold.dart';
@@ -29,8 +30,8 @@ class ProfileWidget extends StatelessWidget {
         AppData.navBarCurrentIndexNotifier.value = 0;
         AppData.onboardingCurrentIndexNotifier.value = 0;
         popUntilLast();
-      } on FirebaseAuthException catch (error) {
-        print(error.toString());
+      } on FirebaseAuthException catch (e) {
+        Utils.showErrorSnackBar(e);
       }
     }
 
@@ -45,11 +46,12 @@ class ProfileWidget extends StatelessWidget {
               const Text('😊', style: AppTextStyles.icons),
               Text(
                 authService.value.currentUser!.displayName ??
-                    'issue retrieving user',
+                    'no username found',
                 style: AppTextStyles.l,
               ),
               Text(
-                authService.value.currentUser!.email ?? 'issue retrieving user',
+                authService.value.currentUser!.email ??
+                    'error retrieving email',
                 style: AppTextStyles.m.copyWith(color: Colors.white54),
               ),
               const SizedBox(height: AppDimensions.kPadding5),

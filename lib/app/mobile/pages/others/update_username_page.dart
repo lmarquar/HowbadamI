@@ -3,6 +3,7 @@ import 'package:howbadami/app/mobile/scaffolds/app_bottom_bar_buttons.dart';
 import 'package:howbadami/app/mobile/widgets/button_widget.dart';
 import 'package:howbadami/core/constants/words.dart';
 import 'package:howbadami/core/firebase/auth_service.dart';
+import 'package:howbadami/core/functions/utils.dart';
 import 'package:howbadami/core/theme/app_text_styles.dart';
 
 class UpdateUsernamePage extends StatefulWidget {
@@ -27,7 +28,7 @@ class _UpdateUsernamePageState extends State<UpdateUsernamePage> {
   void updateUsername() async {
     try {
       await authService.value.updateUsername(username: controllerUsername.text);
-      showSnackBarSuccess();
+      Utils.showSuccessSnackBar(Words.usernameChangedSuccessfully);
     } catch (e) {
       showSnackBarFailure();
     }

@@ -29,7 +29,12 @@ class ProfileWidget extends StatelessWidget {
         AppData.onboardingCurrentIndexNotifier.value = 0;
         popPage();
       } on FirebaseAuthException catch (e) {
-        print(e.message);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Unexpected error: $e'),
+            backgroundColor: Colors.red,
+          ),
+        );
       }
     }
 

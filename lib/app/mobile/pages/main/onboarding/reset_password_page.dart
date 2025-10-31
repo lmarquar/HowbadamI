@@ -36,6 +36,9 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
   void resetPassword() async {
     try {
       await authService.value.resetPassword(email: controllerEmail.text);
+      // await FirebaseAuth.instance.sendPasswordResetEmail(
+      //   email: controllerEmail.text,
+      // );
       showSnackBar();
     } on FirebaseAuthException catch (e) {
       setState(() {
