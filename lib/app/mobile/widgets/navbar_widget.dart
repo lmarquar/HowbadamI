@@ -12,11 +12,11 @@ class NavbarWidget extends StatelessWidget {
       builder: (context, selectedPage, child) {
         return NavigationBar(
           destinations: [
-            NavigationDestination(icon: Icon(Icons.home), label: 'home'),
             NavigationDestination(
               icon: Icon(Icons.people_alt_outlined),
               label: 'Socials',
             ),
+            NavigationDestination(icon: Icon(Icons.home), label: 'home'),
             NavigationDestination(icon: Icon(Elusive.leaf), label: 'Search'),
           ],
           onDestinationSelected: (int value) {

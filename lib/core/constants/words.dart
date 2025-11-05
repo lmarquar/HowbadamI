@@ -30,6 +30,7 @@ class Words {
   static const String flutterProEmail = 'Flutter@pro.com';
   static const String getStarted = 'Get started';
   static const String growthStartsWithin = 'Growth starts within';
+  static const String howbadami = 'Howbadami';
   static const String invalidEmailEntered = "Invalid email entered";
 
   //klmno
@@ -51,8 +52,8 @@ class Words {
   static const String register = 'Register';
   static const String resetPassword = 'Reset password';
   static const String signIn = 'Sign in';
-  static const String theUltimateFlutterProCourse =
-      'The ultimate way to publish like a pro';
+  static const String theWelcomePhrase =
+      'The ultimate way to exchange about emissions';
   static const String settings = 'Settings';
 
   //uvwxyz

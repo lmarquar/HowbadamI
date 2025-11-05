@@ -5,6 +5,7 @@ import 'package:howbadami/app/mobile/scaffolds/app_bottom_bar_buttons.dart';
 import 'package:howbadami/app/mobile/widgets/button_widget.dart';
 import 'package:howbadami/core/constants/words.dart';
 import 'package:howbadami/core/firebase/auth_service.dart';
+import 'package:howbadami/core/functions/utils.dart';
 import 'package:howbadami/core/theme/app_text_styles.dart';
 
 class LoginPage extends StatefulWidget {
@@ -32,8 +33,10 @@ class _LoginPageState extends State<LoginPage> {
         email: controllerEm.text,
         password: controllerPw.text,
       );
+      Utils.showSuccessSnackBar('successfully logged in!');
     } on FirebaseAuthException catch (e) {
       errorMessage = e.message ?? "This is not working. Please try again.";
+      Utils.showErrorSnackBar(errorMessage);
     }
     popPage();
   }

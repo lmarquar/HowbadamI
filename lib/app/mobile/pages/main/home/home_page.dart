@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:howbadami/app/mobile/widgets/treeOmeter_widget.dart';
+import 'package:howbadami/app/mobile/widgets/treeometer_widget.dart';
 import 'package:howbadami/app/mobile/widgets/container_widget.dart';
 import 'package:howbadami/core/constants/words.dart';
 

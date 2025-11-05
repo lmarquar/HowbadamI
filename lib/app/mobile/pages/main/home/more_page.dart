@@ -9,17 +9,17 @@ class MorePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> list = [
-      KValue.keyConcepts,
-      KValue.cleanUi,
-      KValue.fixBugs,
-      KValue.basicLayout,
+      "Carbon offset",
+      "News outlets",
+      "Tipps and tricks",
+      "Contribute",
     ];
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         children: [
           SizedBox(height: 10),
-          HeroWidget(title: 'test app'),
+          HeroWidget(title: 'save trees'),
           SizedBox(height: 10),
           ...List.generate(3, (index) {
             return ContainerWidget(

@@ -52,7 +52,7 @@ class WelcomePage extends StatelessWidget {
                                 style: AppTextStyles.xxl,
                               ),
                               TextSpan(
-                                text: Words.flutterPro,
+                                text: Words.howbadami,
                                 style: AppTextStyles.xxlBlack,
                               ),
                             ],
@@ -61,7 +61,7 @@ class WelcomePage extends StatelessWidget {
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        Words.theUltimateFlutterProCourse,
+                        Words.theWelcomePhrase,
                         style: AppTextStyles.m.copyWith(color: Colors.white54),
                       ),
                     ],

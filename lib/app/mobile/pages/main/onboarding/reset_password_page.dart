@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:howbadami/app/mobile/scaffolds/app_bottom_bar_buttons.dart';
 import 'package:howbadami/core/constants/words.dart';
 import 'package:howbadami/core/firebase/auth_service.dart';
+import 'package:howbadami/core/functions/utils.dart';
 import 'package:howbadami/core/theme/app_text_styles.dart';
 
 import '../../../widgets/button_widget.dart';
@@ -36,13 +37,10 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
   void resetPassword() async {
     try {
       await authService.value.resetPassword(email: controllerEmail.text);
-      // await FirebaseAuth.instance.sendPasswordResetEmail(
-      //   email: controllerEmail.text,
-      // );
-      showSnackBar();
     } on FirebaseAuthException catch (e) {
       setState(() {
         errorMessage = e.message ?? Words.error;
+        Utils.showErrorSnackBar('Error resetting password: $errorMessage');
       });
     }
   }
@@ -120,6 +118,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
           isFilled: true,
           label: Words.resetPassword,
           callback: () async {
+            resetPassword();
             if (formKey.currentState!.validate()) {
               showSnackBar();
             }

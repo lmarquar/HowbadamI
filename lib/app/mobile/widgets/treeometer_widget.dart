@@ -13,7 +13,7 @@ class _TreeOmeterState extends State<TreeOmeter> {
   Widget build(BuildContext context) {
     double startVal = 0;
     double endVal = 5;
-    double _value = 3;
+    double value = 3;
     return SfRadialGauge(
       axes: <RadialAxis>[
         RadialAxis(
@@ -54,7 +54,7 @@ class _TreeOmeterState extends State<TreeOmeter> {
           ],
           pointers: <GaugePointer>[
             NeedlePointer(
-              value: _value,
+              value: value,
               needleLength: 0.95,
               enableAnimation: true,
               animationType: AnimationType.ease,
@@ -70,7 +70,7 @@ class _TreeOmeterState extends State<TreeOmeter> {
                 child: Column(
                   children: <Widget>[
                     Text(
-                      _value.toString(),
+                      value.toString(),
                       style: TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.bold,

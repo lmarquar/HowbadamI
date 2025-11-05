@@ -7,7 +7,7 @@ import 'package:howbadami/app/mobile/pages/main/home/socials_page.dart';
 import 'package:howbadami/app/mobile/widgets/navbar_widget.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-List<Widget> pages = [HomePage(), SocialsPage(), MorePage()];
+List<Widget> pages = [SocialsPage(), HomePage(), MorePage()];
 
 class WidgetTree extends StatelessWidget {
   const WidgetTree({super.key});
