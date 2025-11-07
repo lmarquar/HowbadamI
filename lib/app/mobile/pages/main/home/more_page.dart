@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:howbadami/app/mobile/widgets/container_widget.dart';
 import 'package:howbadami/app/mobile/widgets/hero_widget.dart';
-import 'package:howbadami/core/theme/app_text_styles.dart';
 
 class MorePage extends StatelessWidget {
   const MorePage({super.key});

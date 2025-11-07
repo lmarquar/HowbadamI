@@ -29,6 +29,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
         email: controllerEm.text,
         password: controllerPw.text,
       );
+      await authService.value.updateUsername(
+        username: controllerEm.text.split('@')[0],
+      );
       AppData.isAuthConnected.value = true;
       popPage();
     } on FirebaseAuthException catch (e) {
