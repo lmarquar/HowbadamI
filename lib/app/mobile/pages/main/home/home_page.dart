@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:howbadami/app/mobile/widgets/firebase_db_buttons.dart';
+import 'package:howbadami/app/mobile/widgets/sources_buttons_widget.dart';
 import 'package:howbadami/app/mobile/widgets/treeometer_widget.dart';
-import 'package:howbadami/app/mobile/widgets/container_widget.dart';
 import 'package:howbadami/core/constants/words.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,12 +14,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    List<String> list = [
-      Words.energy,
-      Words.travel,
-      Words.consumption,
-      Words.products,
-    ];
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20),
       child: Column(
@@ -26,12 +21,7 @@ class _HomePageState extends State<HomePage> {
           SizedBox(height: 10),
           TreeOmeter(),
           SizedBox(height: 10),
-          ...List.generate(4, (index) {
-            return ContainerWidget(
-              title: list[index],
-              description: 'This is descriptive',
-            );
-          }),
+          SourcesButtons(),
         ],
       ),
     );
