@@ -1,9 +1,12 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:howbadami/app/mobile/pages/main/emissions/energy_page.dart';
 import 'package:howbadami/app/mobile/pages/main/emissions/food_page.dart';
 import 'package:howbadami/app/mobile/pages/main/emissions/other_page.dart';
 import 'package:howbadami/app/mobile/pages/main/emissions/travel_page.dart';
 import 'package:howbadami/app/mobile/scaffolds/app_padding_scaffold.dart';
+import 'package:howbadami/core/firebase/database_service.dart';
 import 'package:howbadami/core/functions/utils.dart';
 
 class SourcesButtons extends StatefulWidget {
@@ -14,6 +17,38 @@ class SourcesButtons extends StatefulWidget {
 }
 
 class _SourcesButtonsState extends State<SourcesButtons> {
+  Map<String, String> values = {
+    'TravelE': 'Loading...',
+    'FoodE': 'Loading...',
+    'EnergyE': 'Loading...',
+    'GoodsE': 'Loading...',
+  };
+
+  @override
+  void initState() {
+    super.initState();
+    _loadAllValues();
+  }
+
+  Future<void> _loadAllValues() async {
+    for (String path in values.keys) {
+      try {
+        final snapshot = await DatabaseService().read(path: path);
+        if (mounted) {
+          setState(() {
+            values[path] = snapshot?.value?.toString() ?? '0';
+          });
+        }
+      } catch (e) {
+        if (mounted) {
+          setState(() {
+            values[path] = 'Error';
+          });
+        }
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -26,29 +61,29 @@ class _SourcesButtonsState extends State<SourcesButtons> {
           children: [
             _buildGridButton(
               context,
-              'Travel',
+              values['TravelE']!,
               'assets/images/travel.jpg',
               'hero1',
               TravelPage(),
             ),
             _buildGridButton(
               context,
-              'Food',
-              'assets/images/food.jpg',
+              values['FoodE']!,
+              'assets/images/food.png',
               'hero2',
               FoodPage(),
             ),
             _buildGridButton(
               context,
-              'Nature',
-              'assets/images/nature.jpg',
+              values['EnergyE']!,
+              'assets/images/energy.jpg',
               'hero3',
               EnergyPage(),
             ),
             _buildGridButton(
               context,
-              'Tech',
-              'assets/images/tech.jpg',
+              values['GoodsE']!,
+              'assets/images/goods.jpg',
               'hero4',
               OtherPage(),
             ),
@@ -72,31 +107,35 @@ class _SourcesButtonsState extends State<SourcesButtons> {
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Hero(
-            tag: heroTag,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Image.asset(
-                imagePath,
-                fit: BoxFit.cover,
-                width: 50,
-                height: 50,
-              ),
-            ),
-          ),
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: Colors.black,
+              color: Colors.white,
             ),
           ),
-          Text(
-            label,
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 28,
-              color: Colors.white,
-              letterSpacing: 2,
+          Hero(
+            tag: heroTag,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(5),
+              child: Image.asset(
+                imagePath,
+                fit: BoxFit.cover,
+
+                width: 80,
+                height: 80,
+              ),
+            ),
+          ),
+          Align(
+            alignment: AlignmentGeometry.bottomCenter,
+            child: Text(
+              label,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 28,
+                color: Colors.black,
+                letterSpacing: 2,
+              ),
             ),
           ),
         ],
