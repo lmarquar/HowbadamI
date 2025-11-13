@@ -1,4 +1,3 @@
-import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:howbadami/app/mobile/scaffolds/app_padding_scaffold.dart';
 import 'package:howbadami/app/mobile/widgets/button_widget.dart';
@@ -29,8 +28,7 @@ class _FirebaseDbButtonsState extends State<FirebaseDbButtons> {
         ButtonWidget(
           label: 'Read',
           callback: () async {
-            DataSnapshot? snapshot = await DatabaseService().read(path: 'name');
-            print(snapshot?.value);
+            await DatabaseService().read(path: 'name');
           },
         ),
         SizedBox(height: 10),
