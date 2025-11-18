@@ -1,13 +1,9 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:howbadami/app/mobile/pages/main/emissions/energy_page.dart';
 import 'package:howbadami/app/mobile/pages/main/emissions/food_page.dart';
 import 'package:howbadami/app/mobile/pages/main/emissions/other_page.dart';
 import 'package:howbadami/app/mobile/pages/main/emissions/travel_page.dart';
-import 'package:howbadami/app/mobile/scaffolds/app_padding_scaffold.dart';
 import 'package:howbadami/core/firebase/database_service.dart';
-import 'package:howbadami/core/functions/utils.dart';
 
 class SourcesButtons extends StatefulWidget {
   const SourcesButtons({super.key});
@@ -17,36 +13,12 @@ class SourcesButtons extends StatefulWidget {
 }
 
 class _SourcesButtonsState extends State<SourcesButtons> {
-  Map<String, String> values = {
-    'TravelE': 'Loading...',
-    'FoodE': 'Loading...',
-    'EnergyE': 'Loading...',
-    'GoodsE': 'Loading...',
-  };
+  late Future<Map<String, dynamic>> emissionValues;
 
   @override
   void initState() {
     super.initState();
-    _loadAllValues();
-  }
-
-  Future<void> _loadAllValues() async {
-    for (String path in values.keys) {
-      try {
-        final snapshot = await DatabaseService().read(path: path);
-        if (mounted) {
-          setState(() {
-            values[path] = snapshot?.value?.toString() ?? '0';
-          });
-        }
-      } catch (e) {
-        if (mounted) {
-          setState(() {
-            values[path] = 'Error';
-          });
-        }
-      }
-    }
+    emissionValues = DatabaseService().get(pattern: "E");
   }
 
   @override
@@ -54,40 +26,56 @@ class _SourcesButtonsState extends State<SourcesButtons> {
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: GridView.count(
-          crossAxisCount: 2, // two columns
-          crossAxisSpacing: 16,
-          mainAxisSpacing: 16,
-          children: [
-            _buildGridButton(
-              context,
-              values['TravelE']!,
-              'assets/images/travel.jpg',
-              'hero1',
-              TravelPage(),
-            ),
-            _buildGridButton(
-              context,
-              values['FoodE']!,
-              'assets/images/food.png',
-              'hero2',
-              FoodPage(),
-            ),
-            _buildGridButton(
-              context,
-              values['EnergyE']!,
-              'assets/images/energy.jpg',
-              'hero3',
-              EnergyPage(),
-            ),
-            _buildGridButton(
-              context,
-              values['GoodsE']!,
-              'assets/images/goods.jpg',
-              'hero4',
-              OtherPage(),
-            ),
-          ],
+        child: FutureBuilder<Map<String, dynamic>>(
+          future: emissionValues,
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(child: CircularProgressIndicator());
+            }
+            if (snapshot.hasError) {
+              return Center(child: Text('Error: ${snapshot.error}'));
+            }
+            if (!snapshot.hasData || snapshot.data!.isEmpty) {
+              return const Center(child: Text('No data available'));
+            }
+            final data = snapshot.data!;
+
+            return GridView.count(
+              crossAxisCount: 2, // two columns
+              crossAxisSpacing: 16,
+              mainAxisSpacing: 16,
+              children: [
+                _buildGridButton(
+                  context,
+                  data['TravelE']?.toString() ?? '0',
+                  'assets/images/travel.jpg',
+                  'hero1',
+                  TravelPage(),
+                ),
+                _buildGridButton(
+                  context,
+                  data['FoodE']?.toString() ?? '0',
+                  'assets/images/food.png',
+                  'hero2',
+                  FoodPage(),
+                ),
+                _buildGridButton(
+                  context,
+                  data['EnergyE']?.toString() ?? '0',
+                  'assets/images/energy.jpg',
+                  'hero3',
+                  EnergyPage(),
+                ),
+                _buildGridButton(
+                  context,
+                  data['GoodsE']?.toString() ?? '0',
+                  'assets/images/goods.jpg',
+                  'hero4',
+                  OtherPage(),
+                ),
+              ],
+            );
+          },
         ),
       ),
     );

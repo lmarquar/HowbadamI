@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:howbadami/app/mobile/widgets/firebase_db_buttons.dart';
 import 'package:howbadami/app/mobile/widgets/sources_buttons_widget.dart';
 import 'package:howbadami/app/mobile/widgets/treeometer_widget.dart';
-import 'package:howbadami/core/constants/words.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
