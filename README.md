@@ -16,6 +16,7 @@ Berechnung:
 Aussehen:
 Datenbasis:
 Drittanbieter:
+-  nextcloud-app als backend
 -  Snapchat und andere Social Media Integration
 - Calculator.carbonfootprint.com
 - Google health and apple health Informationen
